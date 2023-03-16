@@ -3,7 +3,7 @@
     <title>Boxfuse Sample App: success!</title>
 </head>
 <body style="text-align: center">
-<h1>Congratulations!</h1>
+<h1>welcome</h1>
 <img src="boxfuse.png">
 
 <h2>dev branch jenkins 1</h2>
