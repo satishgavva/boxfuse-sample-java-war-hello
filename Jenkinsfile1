@@ -18,7 +18,7 @@ pipeline {
                   steps{
                      
                        
-                       sshagent(['New']) {
+                       sshagent(['SATISH-11']) {
                        
                        sh """
                             scp -o StrictHostKeyChecking=no  target/boxfuse-sample-java-war-hello.war ec2-user@100.26.211.47:/home/ec2-user/apache-tomcat-9.0.73/webapps/
