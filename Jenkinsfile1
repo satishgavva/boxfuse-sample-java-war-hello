@@ -1,5 +1,5 @@
 pipeline {
-      agent any
+      agent {label 'SATISH-11'}
       
       stages{
             stage("GIT checkout"){
