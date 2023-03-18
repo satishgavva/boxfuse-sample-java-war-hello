@@ -1,5 +1,5 @@
 pipeline {
-      agent {label 'SATISH-11'}
+      agent any
       
       stages{
             stage("GIT checkout"){
@@ -15,19 +15,20 @@ pipeline {
                        
             }
              stage("depoly"){
-                  agent {label 'SATISH-11'}
                   steps{
                      
-                      
+                       
+                       sshagent(['New']) {
                        
                        sh """
-                            scp -o StrictHostKeyChecking=no  target/boxfuse-sample-java-war-hello.war ec2-user@172.31.56.206:/home/ec2-user/apache-tomcat-9.0.73/webapps/
+                            scp -o StrictHostKeyChecking=no  target/boxfuse-sample-java-war-hello.war ec2-user@52.202.136.226:/home/ec2-user/apache-tomcat-9.0.73/webapps/
                             
-                            ssh ec2-user@172.31.56.206 /home/ec2-user/apache-tomcat-9.0.73/bin/shutdown.sh
-                            ssh ec2-user@172.31.56.206 /home/ec2-user/apache-tomcat-9.0.73/bin/startup.sh
+                            ssh ec2-user@172.31.58.67 /home/ec2-user/apache-tomcat-9.0.73/bin/shutdown.sh
+                            ssh ec2-user@172.31.58.67 /home/ec2-user/apache-tomcat-9.0.73/bin/startup.sh
                             
                           """
-   
+    
+}
                       
                        }
             }
